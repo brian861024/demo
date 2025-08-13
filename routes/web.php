@@ -1,5 +1,5 @@
 <?php
-Route::get('/', fn () => redirect('/InTheGreen/'));
+
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\InTheGreenController;
 // 農場介紹
