@@ -1,0 +1,196 @@
+/* ========= 全域設定 ========= */
+  html, body {
+    height: 100%;
+    margin: 0;
+  }
+
+  .wrapper {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh; /* 讓整體至少佔滿螢幕 */
+  }
+
+  main {
+    flex: 1; /* 撐開中間空間，footer 才能貼底 */
+  }
+
+  .page-content {
+    padding-top: 8rem; /* 首頁以外的頁面最上方預留空間給Navbar */
+  }
+
+  .glow-button {
+    color: #0f0f0fd3;
+    transition: color 0.3s ease, text-shadow 0.3s ease;
+    will-change: color, text-shadow;
+  }
+
+  .glow-button:hover {
+    color: #3a3a3aa2;
+    text-shadow: 0 0 2px rgba(39, 39, 39, 0.164), 0 0 6px rgba(134, 134, 134, 0.055);
+    cursor: pointer;
+  }
+
+  .navHr {
+    border-top: 1px solid #ccc;
+  }
+
+  .toggle-icon {
+    transition: transform 0.3s ease;
+  }
+
+  .toggle-icon.rotate {
+    transform: rotate(180deg);
+  }
+
+  .box-shadow {
+    box-shadow: 0 -6px 12px rgba(0, 0, 0, 0.2), 0 6px 12px rgba(0, 0, 0, 0.2);
+  }
+/* ========= 全域設定 ========= */
+
+/* ========= 頁首 ========= */
+  nav.navbar {
+    position: fixed;
+    top: 0; left: 0;
+    width: 100%;
+    z-index: 1030;
+    background-color: transparent;
+    transition: all 0.4s ease-in-out;
+  }
+
+  #mainNav.navbar-shrink {
+    background-color: white !important;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+    padding-top: 0.3rem !important;
+    padding-bottom: 0.5rem !important;
+  }
+
+  .navbar .navbar-brand img {
+    height: 60px;
+    transition: height 0.4s ease-in-out;
+  }
+
+  #mainNav.navbar-shrink .navbar-brand img {
+    height: 45px;
+  }
+
+  #mainNav {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 1050;
+    transition: top 0.3s ease;
+  }
+
+  #mainNav.hide-navbar {
+    top: -100px; /* 根據你的 navbar 高度調整 */
+  }
+
+  .offcanvas {
+    transition: transform 0.6s ease-in-out;
+  }
+
+  #links {
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.4s ease-in-out, visibility 0.4s ease-in-out;
+  }
+
+  #links.show {
+    opacity: 1;
+    visibility: visible;
+  }
+
+/* ========= 頁首 ========= */
+
+/* ========= 輪播 ========= */
+  /* 滿版輪播圖片 */
+  .carousel-item img {
+    height: 100vh;
+    object-fit: cover;
+  }
+
+  /* 覆蓋在輪播上的導覽列 */
+  nav.navbar {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 10;
+    background-color: rgba(255, 255, 255, 0); /* 預設透明 */
+  }
+
+  /* 可選：輪播上的文字調整 */
+  .carousel-caption {
+    bottom: 20%;
+  }
+/* ========= 輪播 ========= */
+
+/* ========= 頁尾 ========= */
+  footer {
+    font-family: 'Noto Serif TC', serif;
+    color: #555;
+    padding: 2rem 1rem;
+  }
+  footer a {
+    color: #555;
+    text-decoration: none;
+    transition: color 0.3s ease;
+  }
+  footer a:hover {
+    color: #8c6d5a;
+  }
+  footer .map-container {
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 4px 8px rgb(140 109 90 / 0.1);
+  }
+  footer h5 {
+    font-weight: 600;
+    margin-bottom: 1rem;
+    color: #3e3a39;
+  }
+  footer p {
+    margin: 0.25rem 0;
+    line-height: 1.6;
+  }
+/* ========= 頁尾 ========= */
+
+/* ========= 圖片遮罩 ========= */
+.img-mask-wrapper {
+  position: relative;
+  display: inline-block;
+  width: 100%;
+}
+
+.img-mask-wrapper img {
+  display: block;
+  width: 100%;
+}
+
+.img-mask-wrapper .img-mask {
+  position: absolute;
+  top: 0; left: 0; right: 0; bottom: 0;
+  background-color: rgba(0, 0, 0, 0.5);
+  pointer-events: none;
+}
+
+.img-mask-text {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 2;
+  color: white;
+  text-align: center;
+  padding: 1rem;
+  pointer-events: auto;
+}
+/* 卡片大小統一裁切 */
+.card-img-top {
+  width: 100%;
+  height: 250px;
+  object-fit: cover;
+  object-position: center;
+}
+/* ========= 圖片遮罩 ========= */
