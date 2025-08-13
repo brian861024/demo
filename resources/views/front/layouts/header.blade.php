@@ -23,6 +23,6 @@
   <link rel="stylesheet"href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
 
   <!-- 引入 自訂的CSS -->
-  <link rel="stylesheet" href="{{ asset('assets/css/layout.css') }}">
+  <link rel="stylesheet" href="/assets/css/layout.css">
 </head>
 
